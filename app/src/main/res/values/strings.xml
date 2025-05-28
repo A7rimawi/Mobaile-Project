@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string-array name="user_roles">
+        <item>Teacher</item>
+        <item>Student</item>
+    </string-array>
+    <string-array name="days_of_week">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+
+</resources>
