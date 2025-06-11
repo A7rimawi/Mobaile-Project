@@ -31,7 +31,7 @@ public class RegistrarHomePageActivity extends AppCompatActivity {
 
         // Set click listeners
         CrdAddStudent.setOnClickListener(v -> {
-            Intent intent = new Intent(this, AddStudentActivity.class);
+            Intent intent = new Intent(this, AddStudentToClassActivity.class);
             startActivity(intent);
         });
 
@@ -41,7 +41,7 @@ public class RegistrarHomePageActivity extends AppCompatActivity {
         });
 
         CrdBuildSchedule.setOnClickListener(v -> {
-            Intent intent = new Intent(this, BuildScheduleActivity.class);
+            Intent intent = new Intent(this, BuildClassScheduleActivity.class);
             startActivity(intent);
         });
 

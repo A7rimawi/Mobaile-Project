@@ -27,13 +27,12 @@ public class BuildScheduleActivity extends AppCompatActivity {
         CrdTeacherSchedule = findViewById(R.id.CrdTeacherSchedule);
 
         CrdStudentSchedule.setOnClickListener(v -> {
-//            Intent intent = new Intent(this, BuildStudentScheduleActivity.class);
-//            startActivity(intent);
+
         });
 
         CrdTeacherSchedule.setOnClickListener(v -> {
-//            Intent intent = new Intent(this, BuildTeacherScheduleActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(this, BuildTeacherScheduleActivity.class);
+            startActivity(intent);
         });
     }
 }

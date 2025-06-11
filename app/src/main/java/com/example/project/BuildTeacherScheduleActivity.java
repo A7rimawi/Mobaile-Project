@@ -73,9 +73,9 @@ public class BuildTeacherScheduleActivity extends AppCompatActivity {
     }
 
     private void loadDataFromServer() {
-        loadSpinnerData("https://your-server.com/get_classes.php", spClass);
-        loadSpinnerData("https://your-server.com/get_teachers.php", spTeacher);
-        loadSpinnerData("https://your-server.com/get_subjects.php", spSubject);
+        loadSpinnerData("https://10.0.2.2:3000/get_classes.php", spClass);
+        loadSpinnerData("https://10.0.2.2:3000/get_teachers.php", spTeacher);
+        loadSpinnerData("https://10.0.2.2:3000/get_subjects.php", spSubject);
     }
 
     private void loadSpinnerData(String url, Spinner spinner) {
@@ -105,7 +105,7 @@ public class BuildTeacherScheduleActivity extends AppCompatActivity {
     private void addTeacherScheduleToDatabase(String className, String teacherName, String subjectName,
                                               String day, String startTime, String endTime) {
 
-        String url = "";
+        String url = "http://10.0.2.2:3000/add_teacher_schedule.php";
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 response -> Toast.makeText(this, "Schedule added successfully", Toast.LENGTH_SHORT).show(),

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Registrar Schedule Creation Screen Layout
-  - Allows registrar to create a schedule for a specific class
-  - Registrar selects class, day, subject, teacher, start time
-  - Can add multiple periods
--->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/sv_create_schedule"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="#669ab9">
 
     <LinearLayout
         android:id="@+id/layout_create_schedule"
@@ -25,13 +21,16 @@
             android:layout_height="wrap_content"
             android:text="Select Class"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:paddingBottom="8dp" />
 
         <Spinner
-            android:id="@+id/spinner_class"
+            android:id="@+id/spClass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="#FFFFFF" />
 
         <!-- Add Period Section -->
         <TextView
@@ -40,54 +39,84 @@
             android:layout_height="wrap_content"
             android:text="Add Period"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:paddingTop="20dp"
             android:paddingBottom="8dp" />
 
         <!-- Day Selection -->
-        <Spinner
-            android:id="@+id/spinner_day"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/" />
+            android:text="Select Day"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"/>
+
+        <Spinner
+            android:id="@+id/spDay"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="#FFFFFF"
+            android:entries="@array/days_of_week" />
 
         <!-- Subject Selection -->
-        <Spinner
-            android:id="@+id/spinner_subject"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:text="Select Subject"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"/>
+
+        <Spinner
+            android:id="@+id/spSubject"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="#FFFFFF" />
 
         <!-- Teacher Selection -->
-        <Spinner
-            android:id="@+id/spinner_teacher"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
+            android:text="Select Teacher"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"/>
 
+        <Spinner
+            android:id="@+id/spTeacher"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:background="#FFFFFF" />
         <!-- Start Time Selection -->
         <TextView
             android:id="@+id/tv_start_time_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Start Time"
+            android:textColor="@color/black"
             android:layout_marginTop="8dp"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
+        <!-- Add Period Button -->
         <TimePicker
             android:id="@+id/timepicker_start_time"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:timePickerMode="spinner"
+            android:layout_height="100dp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
-            android:is24HourView="true" />
+            android:is24HourView="true"
+            android:timePickerMode="spinner" />
 
-        <!-- Add Period Button -->
         <Button
-            android:id="@+id/btn_add_period"
+            android:id="@+id/btnaddperiod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
             android:text="Add Period" />
 
         <!-- List of Added Periods -->
@@ -97,6 +126,7 @@
             android:layout_height="wrap_content"
             android:text="Periods for this Class"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:paddingTop="20dp"
             android:paddingBottom="8dp" />
@@ -113,6 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save Schedule"
+            android:backgroundTint="@color/black"
             android:layout_marginTop="24dp"
             android:textAllCaps="true" />
 

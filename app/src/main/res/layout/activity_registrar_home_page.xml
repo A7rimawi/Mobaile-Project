@@ -149,11 +149,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Build Schedule"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
+                        android:layout_marginTop="12dp"
+                        android:text="Build class Schedule"
                         android:textColor="@color/black"
-                        android:layout_marginTop="12dp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

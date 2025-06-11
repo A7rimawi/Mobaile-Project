@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class AddUserActivity extends AppCompatActivity {
 
-    EditText edtFullName, edtUserName, edtEmail, edtPhoneNumber, edtPassword, edtConfirmPassword;
+    EditText edtFullName, edtUserName, edtEmail, edtPassword, edtConfirmPassword;
     Spinner spRole;
     Button btnAddUser;
     @Override
@@ -41,7 +41,6 @@ public class AddUserActivity extends AppCompatActivity {
         edtFullName = findViewById(R.id.edtFullName);
         edtUserName = findViewById(R.id.edtUserName);
         edtEmail = findViewById(R.id.edtEmail);
-        edtPhoneNumber = findViewById(R.id.edtPhoneNumber);
         edtPassword = findViewById(R.id.edtPassword);
         edtConfirmPassword = findViewById(R.id.edtConfirmPassword);
         spRole = findViewById(R.id.spRole);
@@ -51,12 +50,11 @@ public class AddUserActivity extends AppCompatActivity {
             String fullName = edtFullName.getText().toString().trim();
             String userName = edtUserName.getText().toString().trim();
             String email = edtEmail.getText().toString().trim();
-            String phone = edtPhoneNumber.getText().toString().trim();
             String password = edtPassword.getText().toString().trim();
             String confirmPassword = edtConfirmPassword.getText().toString().trim();
             String role = spRole.getSelectedItem().toString();
 
-            if (fullName.isEmpty() || userName.isEmpty() || email.isEmpty() || phone.isEmpty() ||
+            if (fullName.isEmpty() || userName.isEmpty() || email.isEmpty()  ||
                     password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                 return;
@@ -67,13 +65,12 @@ public class AddUserActivity extends AppCompatActivity {
                 return;
             }
 
-            addUserToDatabase(fullName, userName, email, phone, role, password);
+            addUserToDatabase(fullName, userName, email, role, password);
         });
     }
-    private void addUserToDatabase(String fullName, String userName, String email,
-                                   String phone, String role, String password) {
+    private void addUserToDatabase(String fullName, String userName, String email, String role, String password) {
 
-        String url = "";
+        String url = "http://10.0.2.2:3000/add_user.php";
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 response -> Toast.makeText(this, "User added successfully", Toast.LENGTH_SHORT).show(),
@@ -85,7 +82,6 @@ public class AddUserActivity extends AppCompatActivity {
                 params.put("full_name", fullName);
                 params.put("username", userName);
                 params.put("email", email);
-                params.put("phone", phone);
                 params.put("role", role);
                 params.put("password", password);
                 return params;

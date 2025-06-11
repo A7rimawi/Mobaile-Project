@@ -42,32 +42,11 @@ public class LoginActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
-     //   btnLogin.setOnClickListener(v -> handleLogin());
+        btnLogin.setOnClickListener(v -> loginToServer(edtUsername.getText().toString(),edtPassword.getText().toString()));
     }
-//    private void handleLogin() {
-//        String username = edtUsername.getText().toString().trim();
-//        String password = edtPassword.getText().toString().trim();
-//
-//        if (username.isEmpty()) {
-//            edtUsername.setError("Username required");
-//            return;
-//        }
-//        if (password.isEmpty()) {
-//            edtPassword.setError("Password required");
-//            return;
-//        }
-//
-//        // Mock local authentication (replace with Firebase if needed)
-//        if (username.equals("admin") && password.equals("1234")) {
-//            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
-//            startActivity(new Intent(this, RegistrarHomePageActivity.class));
-//            finish();
-//        } else {
-//            Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
-//        }
-//    }
+
     private void loginToServer(String username, String password) {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://10.0.2.2:3000/login.php",
                 response ->  {
                     try {
                         JSONObject json = new JSONObject(response);
@@ -75,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                             String name = json.getString("fullname");
                             String role = json.getString("role");
                             Toast.makeText(this, "Welcome " + name, Toast.LENGTH_LONG).show();
-                            // Navigate based on role...
+
                         } else {
                             Toast.makeText(this, json.getString("message"), Toast.LENGTH_SHORT).show();
                         }

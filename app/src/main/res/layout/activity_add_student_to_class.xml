@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Flexible layout for Registrar to Add Students to a Class
+  - Allows registrar to select a class and choose students from a list (RecyclerView)
+  - Includes improved styling and responsiveness
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_add_student_to_class"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#669ab9"
+    >
+
+    <!-- Title Section -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Students to Class"
+        android:textStyle="bold"
+        android:textSize="36sp"
+        android:gravity="center"
+        android:paddingBottom="16dp"
+        android:textColor="@color/black" />
+
+    <!-- Class Selection -->
+    <TextView
+        android:id="@+id/tv_select_class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Class"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:paddingBottom="8dp"
+        android:textColor="@color/black" />
+
+    <Spinner
+        android:id="@+id/spinner_class"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Student Selection -->
+    <TextView
+        android:id="@+id/tv_select_students"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Students"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:paddingBottom="8dp"
+        android:textColor="@color/black" />
+
+    <!-- Replace RecyclerView with ListView -->
+    <ListView
+        android:id="@+id/lv_students"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:choiceMode="multipleChoice"
+        android:dividerHeight="1dp"
+        android:background="@color/cardview_light_background"/>
+
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/btn_save_students"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Students to Class"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/white"
+        android:textAllCaps="true"
+        android:padding="12dp"
+        android:elevation="4dp" />
+
+</LinearLayout>

@@ -15,6 +15,15 @@
         android:theme="@style/Theme.Project"
         tools:targetApi="31">
         <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuildClassScheduleActivity"
+            android:exported="false" />
+        <activity
             android:name=".BuildTeacherScheduleActivity"
             android:exported="false" />
         <activity
